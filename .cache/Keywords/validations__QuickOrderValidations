@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "FBA414F21785A28FCA55910A39340F27",
+  "keywordClasses": [
+    {
+      "name": "validations.QuickOrderValidations",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": false
+}

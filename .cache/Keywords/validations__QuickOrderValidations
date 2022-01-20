@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "FBA414F21785A28FCA55910A39340F27",
+  "keywordFileContentHash": "5C792A0C7E3D4D2A646A7263DFF76EA6",
   "keywordClasses": [
     {
       "name": "validations.QuickOrderValidations",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

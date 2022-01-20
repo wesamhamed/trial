@@ -42,7 +42,7 @@ public class QuickOrderHelpers {
 		public static List<WebElement> stocksNotify;
 		public static List<WebElement> images;
 		public static List<WebElement> sku;
-		public static List<QuickOrder1> products;
+		public static List<quickOrder> products;
 	/***
 	 * navigation to quick order page: verify visibility, hover link, verify style, click the link
 	 * @author wesam hamad
@@ -169,7 +169,7 @@ public class QuickOrderHelpers {
 	 * @author wesam hamad
 	 */
 	public static void storeProductsDetailsAndVerifyTotal() {
-		products = new ArrayList<QuickOrder1>();
+		products = new ArrayList<quickOrder>();
 		for(int i=0; i<=4; i++) {
 			TestObject Quantity = WebUI.convertWebElementToTestObject(quantities[i])
 			TestObject Price = WebUI.convertWebElementToTestObject(prices[i])
@@ -178,7 +178,7 @@ public class QuickOrderHelpers {
 			TestObject Img = WebUI.convertWebElementToTestObject(images[i])
 			TestObject StocksNotify = WebUI.convertWebElementToTestObject(stocksNotify[i])
 			TestObject Sku = WebUI.convertWebElementToTestObject(sku[i])
-			products.add(new QuickOrder1(WebUI.getAttribute(Quantity,"value"),WebUI.getText(Price), WebUI.getText(Total),WebUI.getText(Title),
+			products.add(new quickOrder(WebUI.getAttribute(Quantity,"value"),WebUI.getText(Price), WebUI.getText(Total),WebUI.getText(Title),
 					WebUI.getAttribute(Img,"src"),WebUI.getText(StocksNotify),WebUI.getAttribute(Sku,"value")))
 			String name = WebUI.getText(Title)
 			String qyt = WebUI.getAttribute(Quantity, 'value')
@@ -229,8 +229,8 @@ public class QuickOrderHelpers {
 	 * @author wesam hamad
 	 */
 	public static void verifyCartTotalAndRowsNo(int no) {
-		QuickOrderValidations.verifyCartTotal(products[0].getQuantity(), products[1].getQuantity(), products[2].getQuantity(),
-				products[3].getQuantity(), products[4].getQuantity())
+		QuickOrderValidations.verifyCartTotal(products[0].quantity, products[1].quantity, products[2].quantity,
+				products[3].quantity, products[4].quantity)
 
 		List<WebElement> productsNoCartTr = WebUI
 				.findWebElements(findTestObject("Object Repository/Quick Order/tr_productsInCart")
@@ -290,25 +290,23 @@ public class QuickOrderHelpers {
 	}
 	
 }
-public class QuickOrder1{
-	private String quantity;
-	private String price;
-	private String total;
-	private String title;
-	private String img;
-	private String stocksNotify;
-	private String sku;
+public class quickOrder{
+	public String quantity;
+	public String price;
+	public String total;
+	public String title;
+	public String img;
+	public String stocksNotify;
+	public String sku;
 
-	public quickOrder(String quantity,String price, String total, String title,String img ,String stocksNotify,String sku) {
-		this.quantity = quantity;
-		this.price = price;
-		this.total = total;
-		this.title = title;
-		this.img = img;
-		this.stocksNotify = stocksNotify;
-		this.sku =sku;
+	public quickOrder(String _Quantity,String _Price, String _Total, String _Title,String _Img ,String _StocksNotify,String _Sku) {
+		quantity = _Quantity;
+		price = _Price;
+		total = _Total;
+		title = _Title;
+		img = _Img;
+		stocksNotify = _StocksNotify;
+		sku =_Sku;
 	}
-	public String getQuantity() {
-		return this.quantity;
-	}
+	
 }

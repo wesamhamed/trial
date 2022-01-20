@@ -1,12 +1,12 @@
 {
-  "keywordFileContentHash": "09793B82253A39AC2F809AABA39B6505",
+  "keywordFileContentHash": "0D84562AEC05B63B1A85BDC42BDFF5A0",
   "keywordClasses": [
     {
       "name": "helpers.QuickOrderHelpers",
       "keywordMethods": []
     },
     {
-      "name": "helpers.QuickOrder1",
+      "name": "helpers.quickOrder",
       "keywordMethods": []
     }
   ],
